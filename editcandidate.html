@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> URM Application </title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/custom.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css"/>
+	<script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div class="logo">
+			  <a href="dashboard.html"><img src="../images/urmlogo.png" /></a></h1>			  
+			</div>
+			<div class="sponsor">								
+				<!--<form action="index.html">
+					<table id="search-table">
+						<tr>
+							<td class="col-md-4 tbl-row" align="right"><input type="text" id="fname" name="search"></td>
+							<td class="col-md-8 tbl-row"><input type="submit" value="Send"/></td>
+						</tr>
+					</table>
+				</form>-->
+				<a href="#" class="btn">Logout</a>
+			</div>
+			<ul class="categories">
+			  <li><a href="dashboard.html">Dashboard</a></li>
+			  <li>
+				<a href="service.html">Service</a>
+				<!-- <ul>
+				  <li><a href="aboutus">About Us</a>
+				  <li><a href="urmcandidate.html">URM Candidate</a></li>
+				  <li><a href="institution.html">Academic Institution</a></li>
+				  <li><a href="recruiter.html">Recruiter</a></li>
+				  <li><a href="deiofficer.html">DEI Officer</a></li>				  
+				</ul> -->
+			  </li>
+			  <li><a href="userdetails.html" class="active">Users</a></li>
+			</ul>
+		</div>
+		<div id="container">
+			<div class="col-md-3">
+				<div id="verticalbar">
+					<ul>
+					  <li class="topbdr now"><a href="userdetails.html">URM Candidate</a></li>
+					  <li><a href="institutionusers.html">Academic Institution</a></li>
+					  <li><a href="recruiterusers.html">Recruiter</a></li>
+					  <li><a href="deiofficerusers.html">DEI Officer</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<!-- <div class="single">
+					<h2>About Us Content</h2>
+				</div> -->
+				<table id="from-table">
+					<tr>
+						<td class="col-md-12 tbl-row" align="center"><h2>URM Candidate User</h2><br/></td>
+					</tr>
+				</table>
+				<form action="#" method="post" id="commentform">
+					<table id="from-table">
+						<tr>
+							<td class="col-md-4 tbl-row" align="right"><label for="fname">Email</label></td>
+							<td class="col-md-8 tbl-row"><label for="fname">robert.santa@gmail.com</label></td>
+						</tr>
+						<tr>
+							<td class="col-md-4 tbl-row"  align="right"><label for="fname">Status</label></td>
+							<td class="col-md-8 tbl-row"><input type="radio" id="fname" name="status"> Active <input type="radio" id="fname" name="status"> In Active </td>
+						</tr>
+						<tr>
+							<td class="col-md-4 tbl-row"  align="right"><label for="fname">Approval Status</label></td>
+							<td class="col-md-8 tbl-row"><input type="radio" id="fname" name="approvalstatus"> Approved <input type="radio" id="fname" name="approvalstatus"> Rejected </td>
+						</tr>						
+						<tr>
+							<td class="col-md-4 tbl-row"></td>
+							<td class="col-md-8 tbl-row" align="center">
+								<input type="submit" value="Update"/> 
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- BEGIN footer -->
+	<div id="footer">
+	  <div id="row">
+		<div class="col-md-6">All Rights Reserved  &copy;  URM Applications, 2023</div>
+		<div class="col-md-6 left-align">Designed By URM Studens</div>
+	  </div>
+	</div>
+</body>
+</html>
