@@ -1,0 +1,216 @@
+/*
+Group - 5
+Manisha Kankanampati - 1002063542
+Manasa Kondapuram - 1002128586
+Manohar kommi - 1002118103
+Mounika kanneti  - 1002032500
+Tejasri Katikapally - 1002032909
+*/
+
+/* used font-awesome icons present in font-awesome.css for remaining buttons and icons
+and also used glyphicons-halflings-regular fonts */
+#container {
+	clear: both;
+	width: 980px;
+	margin: auto auto;
+	height: auto;
+	min-height: 528px;
+	float: left;
+	background: #F7F6F6;
+	padding: 20px 0;
+}
+#row {
+	width: 980px;
+	margin: auto auto;
+	text-align: left;
+	clear: both;
+	padding: 15px 0px;
+}
+
+#row .left-align {
+	text-align: right;
+}
+#row p {
+	padding: 20px 0px;
+}
+
+.active {
+	background-color: #003366;
+	color: #ffffff;
+}
+
+#from-table {
+	width:100%;
+	border:0px;
+}
+.tbl-row {
+	margin: 5px 0px;
+}
+.align-right {
+	padding-left:36%;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+input[type=submit] {
+  padding: 5px 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+input[type=submit]:hover {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+label {
+  padding: 12px 30px;
+  display: inline-block;
+  clear: both;
+}
+
+input[type=text], input[type=password], select, textarea {
+  width: 80%;
+  padding: 12px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=radio] {
+	margin: 15px 10px;
+}
+#custom-select {
+  width: 85%;
+}
+#custom-select option {
+	border-radius: 0px;
+	padding:12px 10px;
+}
+
+#search-table {
+	padding: -20px 0px;
+}
+#search-table [type=text] {
+	border: 1px solid #003366;
+	border-radius: 0px;
+}
+#search-table [type=Submit] {
+	display:block;
+}
+
+.custom-file-input {
+  color: transparent;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Select some files';
+  color: black;
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 12px 10px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+}
+
+/* job posting table css */
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: #ccc;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+/* end table style */
+
+
+
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+  }
+.col-md-12 {
+width: 100%;
+}
+.col-md-11 {
+width: 91.66666667%;
+}
+.col-md-10 {
+width: 83.33333333%;
+}
+.col-md-9 {
+width: 75%;
+}
+.col-md-8 {
+width: 66.66666667%;
+}
+.col-md-7 {
+width: 58.33333333%;
+}
+.col-md-6 {
+width: 50%;
+}
+.col-md-5 {
+width: 41.66666667%;
+}
+.col-md-4 {
+width: 33.33333333%;
+}
+.col-md-3 {
+width: 25%;
+}
+.col-md-2 {
+width: 16.66666667%;
+}
+.col-md-1 {
+width: 8.33333333%;
+}

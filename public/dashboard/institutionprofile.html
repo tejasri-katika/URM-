@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> URM Application </title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/custom.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css"/>
+	<script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+	<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const queryParams = new URLSearchParams(window.location.search);
+            const email = queryParams.get('email');
+
+            if (email) {
+                fetchInstitutionData(email);
+            }
+        });
+
+        const fetchInstitutionData = async (email) => {
+            try {
+                const response = await fetch(`http://localhost:5000/getInstitutionData`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    const institution = data.institution; // Assuming the API returns an 'institution' object
+                    populateForm(institution);
+                } else {
+                    console.error('Error fetching institution data:', data.error);
+                }
+            } catch (error) {
+                console.error('An error occurred:', error);
+            }
+        };
+
+        const populateForm = (institution) => {
+            document.querySelector('input[name="institutionname"]').value = institution.institutionName;
+            document.querySelector('input[name="email"]').value = institution.email;
+            document.querySelector('input[name="fname"]').value = institution.phoneNumber;
+            document.querySelector('textarea[name="comment"]').value = institution.address;
+        };
+    </script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div class="logo">
+			  <a href="candidatedashboard.html"><img src="../images/urmlogo.png" /></a></h1>			  
+			</div>
+			<div class="sponsor">								
+				<a href="/redirect.html" class="btn">Logout</a>
+			</div>
+			<ul class="categories">
+			  <li><a href="institutiondashboard.html">Dashboard</a></li>
+			  <li><a href="institutionprofile.html" class="active">Profile</a></li>
+			  <li><a href="institutionurmcandidates.html">URM Candidates</a></li>
+			  <li><a href="institutionjobpostings.html">Job Postings</a></li>
+			  <li><a href="institutionjobapplications.html">Job Application</a></li>
+			</ul>
+		</div>
+		<div id="container">
+			<div id="content">
+			<!-- begin recent posts -->	
+			<div class="recent">
+				<div class="single">
+					<h2>Institution Details</h2>
+				</div>					
+				<form action="#" method="post" id="commentform">
+					<table id="from-table">
+						<tr>
+							<td class="col-md-4 tbl-row" align="right"><label for="fname">Institution Name</label></td>
+							<td class="col-md-8 tbl-row"><input type="text" id="institutionname" name="email"></td>
+						</tr>
+						<tr>
+							<td class="col-md-4 tbl-row"  align="right"><label for="fname">Email</label></td>
+							<td class="col-md-8 tbl-row"><input type="text" id="email" name="password"></td>
+						</tr>
+						<tr>
+							<td class="col-md-4 tbl-row"  align="right"><label for="fname">Phone Number</label></td>
+							<td class="col-md-8 tbl-row"><input type="text" id="fname" name="retypepassword"></td>
+						</tr>
+						<tr>
+							<td class="col-md-4 tbl-row" align="right"><label for="fname">Address</label></td>
+							<td class="col-md-8 tbl-row"><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></td>
+						</tr>												
+						<tr>
+							<td class="col-md-4 tbl-row"></td>
+							<td class="col-md-8 tbl-row" align="center">
+								<input type="submit" value="Update"/> 
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			</div>
+		</div>
+	</div>
+	<!-- BEGIN footer -->
+	<div id="footer">
+	  <div id="row">
+		<div class="col-md-6">All Rights Reserved  &copy;  URM Application, 2023</div>
+		<div class="col-md-6 left-align">Designed By URM Students</div>
+	  </div>
+	</div>
+	<div class="chat">
+		<input type="checkbox" id="click">
+		<label for="click">Chat</label> <!-- Added label "Chat" here -->
+			<i class="fab fa-facebook-messenger"></i>
+			<i class="fas fa-times"></i>
+		</label>
+		<div class="wrapper">
+			<div class="head-text">
+				Let's chat? - Online
+			</div>
+			<div class="chat-box">
+				<div class="desc-text">
+				</div>
+				<!--<form action="#">-->
+					<div class="field">
+						<input type="email" placeholder="Your Email Address" required>
+					</div>
+					<div class="field">
+						<input type="email" placeholder="Receiver Email Address" required>
+					</div>
+					<div class="field textarea">
+						<textarea cols="30" rows="10" placeholder="write a message.." required></textarea>
+					</div>
+					<div class="field">
+						<button type="submit">Start Chat</button>
+					</div>
+</body>
+</html>

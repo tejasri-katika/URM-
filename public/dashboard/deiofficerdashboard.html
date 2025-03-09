@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> URM Application </title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/custom.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css"/>
+	<script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div class="logo">
+			  <a href="deiofficerdashboard.html"><img src="../images/urmlogo.png" /></a></h1>			  
+			</div>
+			<div class="sponsor">								
+				<!--<form action="index.html">
+					<table id="search-table">
+						<tr>
+							<td class="col-md-4 tbl-row" align="right"><input type="text" id="fname" name="search"></td>
+							<td class="col-md-8 tbl-row"><input type="submit" value="Send"/></td>
+						</tr>
+					</table>
+				</form>-->
+				<a href="/redirect.html" class="btn">Logout</a>
+			</div>
+			<ul class="categories">
+			  <li><a href="deiofficerdashboard.html" class="active">Dashboard</a></li>
+			  <li><a href="deiofficerprofile.html">Profile</a></li>
+			  <li><a href="#">Job Postings</a>
+					<ul>
+					  <li><a href="deirecruiter.html">Recruiters</a>
+					  <li><a href="deiinstitution.html">Institutions</a>				  
+					</ul>
+			  </li>
+			</ul>
+		</div>
+		<div id="container">
+		<div id="content">
+			<!-- begin recent posts -->
+			<div class="recent">
+				<table id="dashbrd-table">
+					<tr>
+						<td><a href="deirecruiter.html"><i class="fa fa-angle-double-right fa-5x"/></a></td>
+						<td>
+							<h2 style="font-size: 1.0em;"><a href="deirecruiter.html">DEI Goals and Initiatives in Academia:</a></h2>
+							<p>1. Increasing the representation of underrepresented minority groups in faculty and leadership positions.</p>
+							<p>2. Implementing bias training for faculty, staff, and students to reduce unconscious bias in decision-making processes.</p>
+							<p>3. Creating and supporting affinity groups and support networks for underrepresented communities.</p>
+							<p>4. Developing inclusive curricula that reflect diverse perspectives and histories.</p>
+							<p>5. Providing resources and support for first-generation college students and those from disadvantaged backgrounds.</p> &nbsp;
+						</td>
+					</tr> 
+					<tr>
+						<td><a href="deiinstitution.html"><i class="fa fa-angle-double-right fa-5x"/></a></td>
+						<td>
+							<h2  style="font-size: 1.0em;"><a href="deiinstitution.html">Preferred URM Candidates and Location Preferences:</a></h2>
+							<p>The type of underrepresented minority candidates an organization might be interested in depends on their specific DEI goals and the field of academia they operate in. </p>
+								<p>URMs may include individuals from racial and ethnic minority groups, individuals with disabilities, or those from economically disadvantaged backgrounds.</p> &nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td><a href="deirecruiter.html"><i class="fa fa-angle-double-right fa-5x"/></a></td>
+						<td>
+							<h2  style="font-size: 1.0em;"><a href="deirecruiter.html">Role in Promoting Diversity and Equity in Academia:</a></h2>
+							<p>Academic institutions play a crucial role in promoting diversity and equity. By fostering an inclusive environment, they can create a sense of belonging and help students and faculty from diverse backgrounds thrive academically and professionally. </p>
+								<p>This, in turn, contributes to a more enriched and varied academic community.</p> &nbsp;
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!-- end recent posts -->
+		</div>
+		<!-- BEGIN sidebar -->
+			<div id="sidebar">
+				<div class="box chat-user">
+				  <h2>New DEI-Focused Initiatives or Events:</h2>
+				  <ul>
+					  <li>Faculty and Staff DEI Training Program</li>
+					  <li>URM Student Mentorship Program</li>
+					  <li>Diversity Speaker Series</li>
+					  <li>Inclusive Curriculum Development Grant</li>
+					  <li>DEI Awards and Recognition</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- BEGIN footer -->
+	<div id="footer">
+	  <div id="row">
+		<div class="col-md-6">All Rights Reserved  &copy;  URM Application, 2023</div>
+		<div class="col-md-6 left-align">Designed By URM Students</div>
+	  </div>
+	</div>
+	<div class="chat">
+		<input type="checkbox" id="click">
+		<label for="click">Chat</label> <!-- Added label "Chat" here -->
+			<i class="fab fa-facebook-messenger"></i>
+			<i class="fas fa-times"></i>
+		</label>
+		<div class="wrapper">
+			<div class="head-text">
+				Let's chat? - Online
+			</div>
+			<div class="chat-box">
+				<div class="desc-text">
+				</div>
+				<!--<form action="#">-->
+					<div class="field">
+						<input type="email" placeholder="Your Email Address" required>
+					</div>
+					<div class="field">
+						<input type="email" placeholder="Receiver Email Address" required>
+					</div>
+					<div class="field textarea">
+						<textarea cols="30" rows="10" placeholder="write a message.." required></textarea>
+					</div>
+					<div class="field">
+						<button type="submit">Start Chat</button>
+					</div>
+</body>
+<!-- <script>
+window.scrollTo(0, document.getElementById('myChatWindow').scrollHeight);
+</script> -->
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> URM Application </title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/custom.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css"/>
+	<script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div class="logo">
+			  <a href="deiofficerdashboard.html"><img src="../images/urmlogo.png" /></a></h1>			  
+			</div>
+			<div class="sponsor">								
+				<!--<form action="index.html">
+					<table id="search-table">
+						<tr>
+							<td class="col-md-4 tbl-row" align="right"><input type="text" id="fname" name="search"></td>
+							<td class="col-md-8 tbl-row"><input type="submit" value="Send"/></td>
+						</tr>
+					</table>
+				</form>-->
+				<a href="/redirect.html" class="btn">Logout</a>
+			</div>
+			<ul class="categories">
+			  <li><a href="deiofficerdashboard.html">Dashboard</a></li>
+			  <li><a href="deiofficerprofile.html" class="active">Profile</a></li>
+			  <li><a href="#">Job Postings</a>
+					<ul>
+					  <li><a href="deirecruiter.html">Recruiters</a>
+					  <li><a href="deiinstitution.html">Institutions</a>				  
+					</ul>
+			  </li>
+			</ul>
+		</div>
+		<div id="container">
+		<div id="content">
+			<!-- begin recent posts -->
+			<div class="recent">
+				<div class="single">
+					<h2>DEI Officer Details</h2>
+				</div>					
+				<form action="#" method="post" id="commentform">
+					<table id="from-table">
+						<tr>
+							<td class="col-md-4 tbl-row" align="right"><label for="fname">First Name</label></td>
+							<td class="col-md-8 tbl-row"><input type="text" id="institutionname" name="fname" value="Austin"></td>
+						</tr>
+						<tr>
+							<td class="col-md-4 tbl-row" align="right"><label for="lname">Last Name</label></td>
+							<td class="col-md-8 tbl-row"><input type="text" id="lname" name="lname" value="Gomez"></td>
+							</tr>
+						<tr>
+							<td class="col-md-4 tbl-row"  align="right"><label for="fname">Email</label></td>
+							<td class="col-md-8 tbl-row"><input type="text" id="email" name="email" value="austin12@gmail.com"></td>
+						</tr>
+						<tr>
+							<td class="col-md-4 tbl-row" align="right"><label for="lname">Last Name</label></td>
+							<td class="col-md-8 tbl-row"><input type="text" id="institutionname" name="institutionname" value="University of Texas at Arlington"></td>
+							</tr>
+						<tr>
+							<td class="col-md-4 tbl-row"  align="right"><label for="phno">Phone Number</label></td>
+							<td class="col-md-8 tbl-row"><input type="text" id="phno" name="phonenumber" value="(123) 566-4354"></td>
+						</tr>											
+						<tr>
+							<td class="col-md-4 tbl-row"></td>
+							<td class="col-md-8 tbl-row" align="center">
+								<button>Update</button>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<!-- end recent posts -->
+		</div>
+		</div>
+	</div>
+	<!-- BEGIN footer -->
+	<div id="footer">
+	  <div id="row">
+		<div class="col-md-6">All Rights Reserved  &copy;  URM Application, 2023</div>
+		<div class="col-md-6 left-align">Designed By URM Students</div>
+	  </div>
+	</div>
+	<div class="chat">
+		<input type="checkbox" id="click">
+		<label for="click">Chat</label> <!-- Added label "Chat" here -->
+			<i class="fab fa-facebook-messenger"></i>
+			<i class="fas fa-times"></i>
+		</label>
+		<div class="wrapper">
+			<div class="head-text">
+				Let's chat? - Online
+			</div>
+			<div class="chat-box">
+				<div class="desc-text">
+				</div>
+				<!--<form action="#">-->
+					<div class="field">
+						<input type="email" placeholder="Your Email Address" required>
+					</div>
+					<div class="field">
+						<input type="email" placeholder="Receiver Email Address" required>
+					</div>
+					<div class="field textarea">
+						<textarea cols="30" rows="10" placeholder="write a message.." required></textarea>
+					</div>
+					<div class="field">
+						<button type="submit">Start Chat</button>
+					</div>
+</body>
+</html>

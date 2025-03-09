@@ -1,0 +1,64 @@
+/*
+Group - 5
+Manisha Kankanampati - 1002063542
+Manasa Kondapuram - 1002128586
+Manohar kommi - 1002118103
+Mounika kanneti  - 1002032500
+Tejasri Katikapally - 1002032909
+*/
+
+/* used font-awesome icons present in font-awesome.css for remaining buttons and icons
+and also used glyphicons-halflings-regular fonts */
+#slider {
+    width: 978px;
+    height: 409px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 2px;
+    /* margin-bottom: 45px; */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFF;  
+    /* max-width:100vw; */	
+	border:1px solid black;
+}
+
+#slider > div {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    position: absolute;
+    animation: slide 20s infinite;
+    opacity: 0;
+}
+
+#slider > div:nth-child(2) {
+    animation-delay: 5s;
+}
+
+#slider > div:nth-child(3) {
+    animation-delay: 10s;
+}
+
+#slider > div:nth-child(4) {
+    animation-delay: 15s;
+}
+
+#slider > div:nth-child(5) {
+    animation-delay: 20s;
+}
+
+@keyframes slide {
+    10% {
+        opacity: 1;
+        }
+    20% {
+        opacity: 1;
+        }
+    30% {
+        opacity: 1;
+        }
+    40% {
+        opacity: 0;
+        }
+}

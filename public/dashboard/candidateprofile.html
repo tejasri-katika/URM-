@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> URM Application </title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/custom.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css"/>
+	<script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+	<script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            const queryParams = new URLSearchParams(window.location.search);
+            const email = queryParams.get('email');
+
+            if (email) {
+                const emailInput = document.getElementById('email');
+                if (emailInput) {
+                    emailInput.value = email;
+                }
+            }
+        });
+    // Get the email parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get('email');
+
+    // Function to populate the form fields with retrieved data
+    const populateForm = (data) => {
+      document.querySelector('input[name="firstname"]').value = data.firstname;
+      document.querySelector('input[name="lastname"]').value = data.lastname;
+      document.querySelector('input[name="phone"]').value = data.phonenumber;
+	  document.querySelector('input[name="DOB"]').value = data.dateofbirth;
+          document.querySelector('input[name="gender"][value="' + data.gender + '"]').checked = true;
+          document.querySelector('select[name="ethnicity"]').value = data.ethnicity;
+          document.querySelector('select[name="nationality"]').value = data.nationality;
+          document.querySelector('input[name="FOS"]').value = data.feildofstudies;
+          document.querySelector('input[name="qualification"]').value = data.qualification;
+      };
+
+    // Fetch candidate data using email parameter
+    const fetchCandidateData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/getCandidateData', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email })
+        });
+
+        const data = await response.json();
+        if (data.success) {
+          populateForm(data.data);
+        } else {
+          console.error('Error fetching candidate data:', data.error);
+        }
+      } catch (error) {
+        console.error('An error occurred:', error);
+      }
+    };
+
+    // Call fetchCandidateData when the document is loaded
+    window.addEventListener('load', () => {
+      fetchCandidateData();
+    });
+
+	document.getElementById('profileForm').addEventListener('submit', async (e) => {
+  e.preventDefault(); // Prevent the default form submission
+
+  const updatedData = {
+    firstname: document.querySelector('input[name="firstname"]').value,
+    lastname: document.querySelector('input[name="lastname"]').value,
+    phonenumber: document.querySelector('input[name="phone"]').value,
+    dateofbirth: document.querySelector('input[name="DOB"]').value,
+    gender: document.querySelector('input[name="gender"]:checked').value,
+    ethnicity: document.querySelector('select[name="ethnicity"]').value,
+    nationality: document.querySelector('select[name="nationality"]').value,
+    feildofstudies: document.querySelector('input[name="FOS"]').value,
+    qualification: document.querySelector('input[name="qualification"]').value,
+  };
+
+  try {
+    const response = await fetch('http://localhost:5000/updateCandidateData', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, data: updatedData }) // Send the email and updated data as JSON
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      console.log('Record updated successfully:', data.message);
+    } else {
+      console.error('Error updating record:', data.error);
+    }
+  } catch (error) {
+    console.error('An error occurred:', error);
+  }
+});
+    </script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div class="logo">
+			  <a href="candidatedashboard.html"><img src="../images/urmlogo.png" /></a></h1>			  
+			</div>
+			<div class="sponsor">								
+
+				<a href="/redirect.html" class="btn">Logout</a> &nbsp;&nbsp;
+				<a href="candidateprofile.html" class="btn">Edit Profile</a>
+			</div>
+			<ul class="categories">
+			   <li><a href="candidatedashboard.html">Dashboard</a></li>
+
+			  </li>
+			  <li><a href="candidatejobpositions.html">Job Postitions</a></li>
+			</ul>
+		</div>
+		<div id="container">
+			<div class="single">
+				<h2>URM Registrant</h2>
+			</div>
+			<form  >
+				<table id="from-table">
+					<tbody>
+					<tr>
+						<td class="col-md-3 tbl-row" align="right"><label for="firstname">First Name</label></td>
+						<td class="col-md-3 tbl-row"><input type="text" id="firstname" name="firstname" value=""></td>
+						<td class="col-md-3 tbl-row" align="right"><label for="firstname">LastName</label></td>
+						<td class="col-md-3 tbl-row"><input type="text" id="lname" name="lastname" value="Lee"></td>
+					</tr>
+					<tr>
+						<td class="col-md-3 tbl-row" align="right"><label for="firstname">Phone Number</label></td>
+						<td class="col-md-3 tbl-row"><input type="text" id="firstname" name="phone" ></td>
+						<td class="col-md-3 tbl-row" align="right"><label for="firstname" >Email</label></td>
+						<td class="col-md-3 tbl-row">    <input type="text" id="email" name="email" value="">
+						</td>
+					</tr>
+					<tr>
+						<td class="col-md-3 tbl-row" align="right"><label for="firstname">Date Of Birth</label></td>
+						<td class="col-md-3 tbl-row"><input type="date" id="firstname" name="DOB" ></td>
+						<td class="col-md-3 tbl-row" align="right"><label for="firstname">Gender</label></td>
+						<td class="col-md-3 tbl-row"><input type="radio" id="firstname" name="gender"> Male <input type="radio" id="firstname" name="gender" > Female </td>
+					</tr>
+					<tr>
+							<td class="col-md-3 tbl-row" align="right"><label for="firstname">Ethnicity</label></td>
+							<td class="col-md-3 tbl-row" name="ethnicity">
+								<select name="ethnicity" id="custom-select">
+									<option value="">-- Select Role --</option>
+									<option value="African American" >African American</option>
+									<option value="Hispanic or Latino" >Hispanic or Latino</option>
+									<option value="Native Hawaiian">Native Hawaiian</option>
+									<option value="Native American or Alaska Native">Alaska Native</option>
+									<option value="Asian">Asian</option>
+								</select>
+							</td>
+							<td class="col-md-3 tbl-row" align="right"><label for="firstname">Nationality</label></td>
+							<td class="col-md-3 tbl-row" name="nationality">
+								<select name="nationality" id="custom-select">
+									<option value="">-- Select Role --</option>
+									<option value="United States" >United States</option>
+									<option value="India">India</option>
+									<option value="South Africa">South Africa</option>
+									<option value="Spain">Spain</option>
+									<option value="Canada">Canada</option>
+									<option value="New Zealand">New Zealand</option>
+									<option value="Japan">Japan</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="col-md-3 tbl-row" align="right"><label for="FOS">Field of Studies</label></td>
+							<td class="col-md-3 tbl-row"><input type="text" id="FOS" name="FOS" ></td>
+							<td class="col-md-3 tbl-row" align="right"><label for="qualification">Qualification</label></td>
+							<td class="col-md-3 tbl-row"><input type="text" id="qualification" name="qualification"></td>
+						</tr>
+						<tr>
+							<td class="col-md-3 tbl-row" align="right"><label for="firstname">Upload CV</label></td>
+							<td class="col-md-3 tbl-row"><input type="file" id="firstname" class="custom-file-input" name="email"></td>
+							<td class="col-md-3 tbl-row" align="right"><label for="firstname">Publications</label></td>
+							<td class="col-md-3 tbl-row"><input type="file" id="firstname" class="custom-file-input" name="email"></td>
+						</tr>
+					<tr>
+						<td class="col-md-3 tbl-row"></td>
+						<td class="col-md-3 tbl-row"></td>
+						<td class="col-md-3 tbl-row"><input type="submit" value="Submit"/> </td>
+						<td class="col-md-3 tbl-row"></td>
+					</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</div>
+	<!-- BEGIN footer -->
+	<div id="footer">
+	  <div id="row">
+		<div class="col-md-6">All Rights Reserved  &copy;  URM Application, 2023</div>
+		<div class="col-md-6 left-align">Designed By URM Students</div>
+	  </div>
+	</div>
+	<div class="chat">
+		<input type="checkbox" id="click">
+		<label for="click">Chat</label> <!-- Added label "Chat" here -->
+			<i class="fab fa-facebook-messenger"></i>
+			<i class="fas fa-times"></i>
+		</label>
+		<div class="wrapper">
+			<div class="head-text">
+				Let's chat? - Online
+			</div>
+			<div class="chat-box">
+				<div class="desc-text">
+				</div>
+				<!--<form action="#">-->
+					<div class="field">
+						<input type="email" placeholder="Your Email Address" required>
+					</div>
+					<div class="field">
+						<input type="email" placeholder="Receiver Email Address" required>
+					</div>
+					<div class="field textarea">
+						<textarea cols="30" rows="10" placeholder="write a message.." required></textarea>
+					</div>
+					<div class="field">
+						<button type="submit">Start Chat</button>
+					</div>
+</body>
+</html>

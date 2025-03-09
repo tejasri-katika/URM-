@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> URM Application </title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/custom.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css"/>
+	<script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div class="logo">
+			  <a href="candidatedashboard.html"><img src="../images/urmlogo.png" /></a></h1>			  
+			</div>
+			<div class="sponsor">								
+				<!--<form action="index.html">
+					<table id="search-table">
+						<tr>
+							<td class="col-md-4 tbl-row" align="right"><input type="text" id="fname" name="search"></td>
+							<td class="col-md-8 tbl-row"><input type="submit" value="Send"/></td>
+						</tr>
+					</table>
+				</form>-->
+				<a href="/redirect.html" class="btn">Logout</a>
+			</div>
+			<ul class="categories">
+			  <li><a href="institutiondashboard.html">Dashboard</a></li>
+			  <li><a href="institutionurmcandidates.html" class="active">URM Candidates</a></li>
+			  <li><a href="institutionjobpostings.html">Job Postings</a></li>
+			  <li><a href="institutionjobapplications.html">Job Application</a></li>
+			</ul>
+		</div>
+		<div id="container">
+		<div id="content">
+			<!-- begin recent posts -->
+			<div class="recent">
+				<div class="single">
+					<h2>URM Candidates</h2>
+				</div>
+				<table class="data-table" style="text-align:center; border-spacing: 30px;">
+					<thead>
+						<th>#</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Qualification</th>
+						<th>Phone</th>
+					</thead>
+					<tr>
+						<td>1</td>
+						<td>Greg</td>
+						<td>gg.22@gmail.com</td>
+						<td>Phd</td>
+						<td>(123) 456-5563</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>William</td>
+						<td>williampt@gmail.com</td>
+						<td>Post Graduate</td>
+						<td>(153) 456-5233</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Shreya</td>
+						<td>k.sreya@gmail.com</td>
+						<td>Phd</td>
+						<td>(127) 312-9063</td>
+					</tr>
+				</table>
+			</div>
+			<!-- end recent posts -->
+		</div>
+		</div>
+	</div>
+	<!-- BEGIN footer -->
+	<div id="footer">
+	  <div id="row">
+		<div class="col-md-6">All Rights Reserved  &copy;  URM Applications, 2023</div>
+		<div class="col-md-6 left-align">Designed By URM Studens</div>
+	  </div>
+	</div>
+	<div class="chat">
+		<input type="checkbox" id="click">
+		<label for="click">Chat</label> <!-- Added label "Chat" here -->
+			<i class="fab fa-facebook-messenger"></i>
+			<i class="fas fa-times"></i>
+		</label>
+		<div class="wrapper">
+			<div class="head-text">
+				Let's chat? - Online
+			</div>
+			<div class="chat-box">
+				<div class="desc-text">
+				</div>
+				<!--<form action="#">-->
+					<div class="field">
+						<input type="email" placeholder="Your Email Address" required>
+					</div>
+					<div class="field">
+						<input type="email" placeholder="Receiver Email Address" required>
+					</div>
+					<div class="field textarea">
+						<textarea cols="30" rows="10" placeholder="write a message.." required></textarea>
+					</div>
+					<div class="field">
+						<button type="submit">Start Chat</button>
+					</div>
+</body>
+</html>
